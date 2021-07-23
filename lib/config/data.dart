@@ -30,3 +30,8 @@ List meterValues = [
   {"name": "Critical", "amount": 100.0},
   {"name": "Refill", "amount": 500.0},
 ];
+
+List cylinders = [
+  {"name": "Cylinder 1", "volume": 20.0},
+  {"name": "Cylinder 2", "volume": 80.0},
+];

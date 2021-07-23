@@ -3,20 +3,30 @@ import 'package:gas_monitoring/config/data.dart';
 import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
 
 class CylinderDetails extends StatelessWidget {
+  final String cylinderName;
+  final double volume;
+
+  CylinderDetails({
+    this.cylinderName,
+    this.volume,
+  });
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        /* Align(
+        Align(
           alignment: Alignment.topLeft,
           child: Padding(
             padding: const EdgeInsets.only(top: 16.0, left: 8.0),
             child: Container(
               width: 250,
-              child: Image.asset('images/mastercardlogo.png'),
+              child: Text(
+                cylinderName,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              ),
             ),
           ),
-        ),*/
+        ),
         Align(
           alignment: Alignment.bottomRight,
           child: Padding(
@@ -26,7 +36,7 @@ class CylinderDetails extends StatelessWidget {
               width: 100,
               child: Center(
                   child: Text(
-                '12/24',
+                volume.toString(),
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               )),
               decoration: BoxDecoration(
@@ -55,7 +65,7 @@ class CylinderDetails extends StatelessWidget {
                                 height: 150,
                                 width: 150,
                                 child: LiquidCircularProgressIndicator(
-                                  value: 0.5, // Defaults to 0.5.
+                                  value: volume * 0.01, // Defaults to 0.5.
                                   valueColor: AlwaysStoppedAnimation(Colors
                                           .lightBlue[
                                       500]), // Defaults to the current Theme's accentColor.

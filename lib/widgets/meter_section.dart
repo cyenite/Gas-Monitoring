@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gas_monitoring/config/data.dart';
+import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 
 class MeterSection extends StatelessWidget {
   @override
@@ -46,7 +47,23 @@ class MeterSection extends StatelessWidget {
             ),
             Expanded(
               flex: 6,
-              child: Container(),
+              child: SleekCircularSlider(
+                appearance: CircularSliderAppearance(
+                  customWidths: CustomSliderWidths(progressBarWidth: 10),
+                  animationEnabled: true,
+                  animDurationMultiplier: 5,
+                  customColors: CustomSliderColors(progressBarColors: [
+                    Colors.indigo[400],
+                    Colors.blue,
+                    Colors.green,
+                    Colors.amber,
+                    Colors.deepOrange,
+                  ]),
+                ),
+                min: 10,
+                max: 100,
+                initialValue: 17,
+              ),
             ),
           ],
         ),

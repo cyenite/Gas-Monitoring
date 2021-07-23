@@ -11,14 +11,15 @@ class DataSection extends StatelessWidget {
         Container(
           margin: EdgeInsets.symmetric(horizontal: 20),
           alignment: Alignment.topLeft,
-          child: Text('Number of gas cylinders: 2',
+          child: Text('Number of gas cylinders: ${cylinders.length}',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
         ),
         Expanded(
           child: ListView.builder(
-            itemCount: 2,
+            itemCount: cylinders.length,
             scrollDirection: Axis.horizontal,
-            itemBuilder: (context, i) {
+            itemBuilder: (context, index) {
+              var cylinder = cylinders[index];
               return Container(
                 width: MediaQuery.of(context).size.width,
                 margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
@@ -49,7 +50,10 @@ class DataSection extends StatelessWidget {
                             color: Colors.white38),
                       ),
                     ),
-                    CylinderDetails(),
+                    CylinderDetails(
+                      cylinderName: cylinder['name'],
+                      volume: cylinder['volume'],
+                    ),
                   ],
                 ),
               );

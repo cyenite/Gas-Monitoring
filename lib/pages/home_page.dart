@@ -24,6 +24,24 @@ class HomePage extends StatelessWidget {
           Expanded(
             child: MeterSection(),
           ),
+          Container(
+            height: 50.0,
+            width: 150.0,
+            margin: EdgeInsets.only(bottom: 50.0),
+            decoration: BoxDecoration(
+              color: Colors.orange,
+              borderRadius: BorderRadius.circular(20.0),
+              boxShadow: customShadow,
+            ),
+            child: Center(
+                child: Text(
+              'Query Weight',
+              style: TextStyle(
+                  color: primaryColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20),
+            )),
+          ),
         ],
       ),
     );

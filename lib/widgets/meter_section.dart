@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gas_monitoring/config/data.dart';
+import 'package:gas_monitoring/controllers/weight_controller.dart';
+import 'package:get/get.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 
 class MeterSection extends StatelessWidget {
+  final WeightController controller = Get.find<WeightController>();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -12,7 +15,7 @@ class MeterSection extends StatelessWidget {
         Container(
             margin: EdgeInsets.symmetric(horizontal: 20),
             child: Text(
-              'Meter',
+              'Weight Meter',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             )),
         Row(
@@ -47,23 +50,24 @@ class MeterSection extends StatelessWidget {
             ),
             Expanded(
               flex: 6,
-              child: SleekCircularSlider(
-                appearance: CircularSliderAppearance(
-                  customWidths: CustomSliderWidths(progressBarWidth: 10),
-                  animationEnabled: true,
-                  animDurationMultiplier: 5,
-                  customColors: CustomSliderColors(progressBarColors: [
-                    Colors.indigo[400],
-                    Colors.blue,
-                    Colors.green,
-                    Colors.amber,
-                    Colors.deepOrange,
-                  ]),
-                ),
-                min: 10,
-                max: 100,
-                initialValue: 17,
-              ),
+              child: Obx(() {
+                return SleekCircularSlider(
+                  appearance: CircularSliderAppearance(
+                    customWidths: CustomSliderWidths(progressBarWidth: 10),
+                    animationEnabled: true,
+                    customColors: CustomSliderColors(progressBarColors: [
+                      Colors.indigo[400],
+                      Colors.blue,
+                      Colors.green,
+                      Colors.amber,
+                      Colors.deepOrange,
+                    ]),
+                  ),
+                  min: 0,
+                  max: 100,
+                  initialValue: controller.weight.value,
+                );
+              }),
             ),
           ],
         ),

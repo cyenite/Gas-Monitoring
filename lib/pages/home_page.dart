@@ -14,6 +14,7 @@ class HomePage extends StatelessWidget {
   int random = Random().nextInt(100);
   @override
   Widget build(BuildContext context) {
+    controller.setWeight(random.toDouble());
     return Scaffold(
       backgroundColor: primaryColor,
       body: Column(

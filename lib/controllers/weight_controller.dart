@@ -11,6 +11,7 @@ class WeightController extends GetxController {
   }
 
   setVolume(double v) {
+    // TODO: Add volume calculation
     volume(v);
     volumePercentage(v);
   }

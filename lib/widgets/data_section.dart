@@ -24,9 +24,10 @@ class DataSection extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
                 decoration: BoxDecoration(
-                    color: primaryColor,
-                    boxShadow: customShadow,
-                    borderRadius: BorderRadius.circular(20)),
+                  color: primaryColor,
+                  boxShadow: customShadow,
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 child: Stack(
                   children: [
                     Positioned.fill(

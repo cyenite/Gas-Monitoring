@@ -53,7 +53,7 @@ class MeterSection extends StatelessWidget {
               child: Obx(() {
                 return SleekCircularSlider(
                   appearance: CircularSliderAppearance(
-                    customWidths: CustomSliderWidths(progressBarWidth: 10),
+                    customWidths: CustomSliderWidths(progressBarWidth: 12),
                     animationEnabled: true,
                     customColors: CustomSliderColors(progressBarColors: [
                       Colors.indigo[400],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gas_monitoring/controllers/weight_controller.dart';
-import 'package:gas_monitoring/pages/home_page.dart';
+import 'package:gas_monitoring/utils/root.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: Root(),
     );
   }
 }

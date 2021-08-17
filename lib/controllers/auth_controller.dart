@@ -4,10 +4,13 @@ import 'dart:convert';
 import 'package:gas_monitoring/config/app_url.dart';
 import 'package:gas_monitoring/models/user_model.dart';
 import 'package:gas_monitoring/services/user_preference.dart';
+import 'package:get/get.dart' hide Response;
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:http/http.dart';
 
 class AuthController extends GetxController {
+  Rx<bool> isLoggedIn = true.obs;
+
   Future<Map<String, dynamic>> login(String email, String password) async {
     var result;
     final Map<String, dynamic> loginData = {

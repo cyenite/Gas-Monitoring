@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Color primaryColor = Color(0xFFCADCED);
+const Color primaryColor = Color(0xFFCADCED);
 
 List<BoxShadow> customShadow = [
   BoxShadow(

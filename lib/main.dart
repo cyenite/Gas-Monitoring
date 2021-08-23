@@ -3,8 +3,11 @@ import 'package:gas_monitoring/controllers/weight_controller.dart';
 import 'package:gas_monitoring/utils/root.dart';
 import 'package:get/get.dart';
 
+import 'controllers/user_controller.dart';
+
 void main() {
   Get.put(WeightController());
+  Get.put(UserController());
   runApp(MyApp());
 }
 

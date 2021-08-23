@@ -8,8 +8,26 @@ import 'package:get/get.dart' hide Response;
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:http/http.dart';
 
+enum Status {
+  NotLoggedIn,
+  NotRegistered,
+  LoggedIn,
+  Registered,
+  Authenticating,
+  Registering,
+  LoggedOut
+}
+
 class AuthController extends GetxController {
   Rx<bool> isLoggedIn = true.obs;
+  Status _loggedInStatus = Status.NotLoggedIn;
+  Status _registeredInStatus = Status.NotRegistered;
+
+  Status get loggedInStatus => _loggedInStatus;
+  Status get registeredInStatus => _registeredInStatus;
+
+  set setLoggedInStatus(Status status) => _loggedInStatus;
+  set setRegisteredInStatus(Status status) => _registeredInStatus;
 
   Future<Map<String, dynamic>> login(String email, String password) async {
     var result;

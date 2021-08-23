@@ -5,11 +5,11 @@ import 'dart:async';
 class UserPreferences {
   Future<bool> saveUser(User user) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString("displayName", user.email);
-    prefs.setString("username", user.username);
-    prefs.setString("firstName", user.firstName);
-    prefs.setString("lastName", user.lastName);
-    prefs.setString("token", user.token);
+    prefs.setString("displayName", user.email!);
+    prefs.setString("username", user.username!);
+    prefs.setString("firstName", user.firstName!);
+    prefs.setString("lastName", user.lastName!);
+    prefs.setString("token", user.token!);
     //prefs.setString("renewalToken", user.renewalToken);
     //ignore: deprecated_member_use
     return prefs.commit();
@@ -17,13 +17,13 @@ class UserPreferences {
 
   Future<User> getUser() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    String email = prefs.getString("email");
-    String username = prefs.getString("username");
-    String firstName = prefs.getString("firstName");
-    String lastName = prefs.getString("lastName");
+    String email = prefs.getString("email")!;
+    String username = prefs.getString("username")!;
+    String firstName = prefs.getString("firstName")!;
+    String lastName = prefs.getString("lastName")!;
     //String email = prefs.getString("email");
     //String imei = prefs.getString("imei");
-    String token = prefs.getString("token");
+    String token = prefs.getString("token")!;
     //String renewalToken = prefs.getString("renewalToken");
 
     return User(
@@ -48,7 +48,7 @@ class UserPreferences {
 
   Future<String> getToken(args) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    String token = prefs.getString("token");
+    String token = prefs.getString("token")!;
     return token;
   }
 }

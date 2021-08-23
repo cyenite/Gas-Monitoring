@@ -44,33 +44,30 @@ class SignUpState extends State<SignUp> {
     UserController userController = Get.find<UserController>();
     var size = MediaQuery.of(context).size;
 
-    var doRegister = () {
+    var doRegister = () async {
       successful = true;
       //final form = formKey.currentState;
-      auth
-          .register(
+      var response = await auth.register(
               firstName: nameController.text,
               lastName: lastNameController.text,
               password: passController.text,
               email: emailController2.text,
-              phoneNumber: phoneNumberController.text)
-          .then((response) {
-        if (response['status']) {
-          User user = response['data'];
-          userController.setUser(user);
-          Get.off(HomePage());
-        } else {
-          setState(() {
-            successful = false;
-            Flushbar(
-              title: "Registration Failed",
-              message: response.toString(),
-              duration: Duration(seconds: 10),
-            ).show(context);
-          });
-          //auth.setRegisteredInStatus(Status.NotRegistered);
-        }
-      });
+              phoneNumber: phoneNumberController.text);
+      if (response['status']) {
+        User user = response['data'];
+        userController.setUser(user);
+        Get.off(HomePage());
+      } else {
+        setState(() {
+          successful = false;
+          Flushbar(
+            title: "Registration Failed",
+            message: response.toString(),
+            duration: Duration(seconds: 10),
+          ).show(context);
+        });
+        //auth.setRegisteredInStatus(Status.NotRegistered);
+      }
     };
 
     var loading = Row(

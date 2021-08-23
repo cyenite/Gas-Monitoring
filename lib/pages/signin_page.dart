@@ -16,7 +16,7 @@ import 'home_page.dart';
 final formKey = new GlobalKey<FormState>();
 bool passwordVisible = false;
 bool isRemember = false;
-String _username, _password;
+late String _username, _password;
 TextEditingController emailController = new TextEditingController();
 TextEditingController passwordController = new TextEditingController();
 var isPassword = true;
@@ -55,7 +55,7 @@ class SignInState extends State<SignIn> {
 
     var doLogin = () async {
       final form = formKey.currentState;
-      if (form.validate()) {
+      if (form!.validate()) {
         form.save();
         _username = emailController.text;
         _password = passwordController.text;

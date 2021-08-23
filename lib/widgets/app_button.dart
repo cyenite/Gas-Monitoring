@@ -5,7 +5,7 @@ class AppButton extends StatefulWidget {
   var textContent;
   VoidCallback onPressed;
 
-  AppButton({@required this.textContent, @required this.onPressed});
+  AppButton({required this.textContent, required this.onPressed});
 
   @override
   State<StatefulWidget> createState() {
@@ -43,7 +43,7 @@ class AppButtonState extends State<AppButton> {
   }
 
   @override
-  State<StatefulWidget> createState() {
+  State<StatefulWidget>? createState() {
     // TODO: implement createState
     return null;
   }

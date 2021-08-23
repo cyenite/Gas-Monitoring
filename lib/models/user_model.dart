@@ -1,11 +1,11 @@
 class User {
-  String firstName;
-  String lastName;
-  String email;
-  String username;
-  String token;
-  String renewalToken;
-  String activeVehicles;
+  String? firstName;
+  String? lastName;
+  String? email;
+  String? username;
+  String? token;
+  String? renewalToken;
+  String? activeVehicles;
 
   User(
       {this.email,

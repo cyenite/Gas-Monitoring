@@ -10,8 +10,8 @@ class CylinderDetails extends StatelessWidget {
   final double volume;
 
   CylinderDetails({
-    this.cylinderName,
-    this.volume,
+    required this.cylinderName,
+    required this.volume,
   });
   @override
   Widget build(BuildContext context) {
@@ -78,7 +78,7 @@ class CylinderDetails extends StatelessWidget {
                                     0.01, // Defaults to 0.5.
                                 valueColor: AlwaysStoppedAnimation(Colors
                                         .lightBlue[
-                                    500]), // Defaults to the current Theme's accentColor.
+                                    500]!), // Defaults to the current Theme's accentColor.
                                 backgroundColor: Colors
                                     .white, // Defaults to the current Theme's backgroundColor.
                                 borderColor: Colors.blue,

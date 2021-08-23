@@ -91,12 +91,12 @@ class AuthController extends GetxController {
     return result;
   }
 
-  Future<Map<String, dynamic>> register(
-      {String firstName,
-      String lastName,
-      String email,
-      String password,
-      String phoneNumber}) async {
+  FutureOr<dynamic> register(
+      {required String firstName,
+      required String lastName,
+      required String email,
+      required String password,
+      required String phoneNumber}) async {
     final Map<String, dynamic> registrationData = {
       "firstName": firstName,
       "lastName": lastName,

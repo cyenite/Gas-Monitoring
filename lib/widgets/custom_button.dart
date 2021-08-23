@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gas_monitoring/config/data.dart';
 
 class CustomButton extends StatelessWidget {
-  final String textButton;
+  final String? textButton;
 
-  const CustomButton({Key key, this.textButton}) : super(key: key);
+  const CustomButton({Key? key, this.textButton}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class CustomButton extends StatelessWidget {
         boxShadow: customShadow,
       ),
       child: Text(
-        textButton,
+        textButton!,
         style: TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.w500,

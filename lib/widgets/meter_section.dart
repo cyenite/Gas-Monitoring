@@ -56,7 +56,7 @@ class MeterSection extends StatelessWidget {
                     customWidths: CustomSliderWidths(progressBarWidth: 12),
                     animationEnabled: true,
                     customColors: CustomSliderColors(progressBarColors: [
-                      Colors.indigo[400],
+                      Colors.indigo,
                       Colors.blue,
                       Colors.green,
                       Colors.amber,
